@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <style>
+  /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .slide
+   {
+    background-image: url('back.jpg');
+   } 
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    .carousel-inner img {
+      /*width: 100%; /* Set width to 100% */
+      margin: auto;
+     /* min-height:500px;*/
+     min-width:700px;
+     max-height: 500px;
+     position:center;
+  }
+
+.drop
+{  font-size: 20px;
+    color:white;
+    text-align: middle;
+    line-height: 30px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button[type="submit"]
+{
+  margin-left:2px;
+}
+.text
+{
+  margin-left: 40px;
+}
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    position: center;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: 20%;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 10%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+.last
+{
+  width:90%;
+  height:90px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 67%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+    overflow-y:hidden;
+    margin-left: 200px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 0.5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+.imgs
+{
+  width:100%;
+  height:350px;
+}
+h6
+{
+  font-size: 20px;
+color:white;
+}
+.footeri
+{
+color:white;
+margin-right: 18px;
+font-size:30px;
+}
+
+.foot
+{
+  height: 300px;
+}
+.para
+{
+  text-decoration: none;
+}
+
+  </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#" style="color:white">Fashion Hub</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="trend.html">Home</a></li>
+
+       <li class="dropdown">
+          <a href="men.html" class="dropdown-toggle" data-toggle="dropdown">Men<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header"><a href="men.html" style="text-decoration: none;color:blue;">Topwear</a></li>
+            <li><a href="men_shirt.html">T-shirts</a></li>
+            <li><a href="#">Casual Shirts</a></li>
+            <li><a href="men_tshirts.html">Formal Shirts</a></li>
+            <li><a href="men_sweater.html">Sweaters & Sweatshirts</a></li>
+            <li><a href="men_jackets.html">Jackets</a></li>
+            <li><a href="#">Blazers & coats</a></li>
+            <li><a href="#">Suits</a></li>
+            <li><a href="#">Clothing Fabric</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header" style="color:blue">Bottomwear</li>
+            <li><a href="men_jeans.html">Jeans</a></li>
+            <li><a href="men_footwear.html">Footwear</a></li>
+            <li><a href="men_kurta.html">Kurtas</a></li>
+            <li><a href="men_sherwani.html">Sherwani</a></li>
+            <li><a href="#">Track Pants</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header" style="color:blue">Sports and Active Wear</li>
+            <li><a href="#">Smart Wearables</a></li>
+            <li><a href="#">Sports Shoes</a></li>
+            <li><a href="#">Swimwear</a></li>
+            <li><a href="#">Sports Equipment</a></li>
+          </ul>
+      </li>
+
+        <li class="dropdown"><a href="men.html" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header"><a href="women.html" style="color:red;text-decoration: none;">Indian & Fushion wear</a></li>
+            <li><a href="women_kurti.html">Kurtas & Suits</a></li>
+            <li><a href="#">Leggings,Salwars,Chudidars</a></li>
+            <li><a href="#">Skirts & Palazzos</a></li>
+            <li><a href="women_saree.html">Sarees & Blouses</a></li>
+            <li><a href="women_dress.html">Dress Material</a></li>
+            <li><a href="women_lahenga.html">Lehenga Choli</a></li>
+            <li><a href="#">Dupattas & Shawls</a></li>
+            <li><a href="women_jacket.html">Jackets & Waistcoats</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header" style="color:red">Western Wear</li>
+            <li><a href="women_jeans.html">Jeans</a></li>
+            <li><a href="women_tshirt.html">Tops,T-Shirts & Shirts</a></li>
+            <li><a href="#">Shorts & Skirts</a></li>
+            <li><a href="#">Shrugs</a></li>
+            <li><a href="women_footwear.html">Footwear</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header" style="color:red">Sports and Active Wear</li>
+            <li><a href="#">Smart Wearables</a></li>
+            <li><a href="#">Sports Shoes</a></li>
+            <li><a href="#">Swimwear</a></li>
+            <li><a href="#">Sports Equipment</a></li>
+            <li class="dropdown-header" style="color:red">Beauty & Personal Care</li>
+            <li><a href="#">Makeup</a></li>
+            <li><a href="#">SkinCare</a></li>
+            <li><a href="#">Premium Beauty</a></li>
+            <li><a href="#">Fragrances</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Kids<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header"><<a href="kids.html" style="color:orange;text-decoration: none">Girls Clothing</li>
+            <li><a href="kid_dress.html">Dresses</a></li>
+            <li><a href="kid_tshirt.html">Tops & T-Shirts</a></li>
+            <li><a href="kid_set.html">Clothing Sets</a></li>
+            <li><a href="#">Indian Wear</a></li>
+            <li><a href="#">Skirts,Shorts & Jumpsuits</a></li>
+            <li><a href="#">Tights & Leggings</a></li>
+            <li><a href="kid_jeans.html">Jeans,Trousers & Capris</a></li>
+            <li><a href="kid_sweater.html">Sweaters</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header" style="color:orange">Boys Clothing</li>
+            <li><a href="#">T-Shirts</a></li>
+            <li><a href="#">Shirts</a></li>
+            <li><a href="#">Jenas & Trousers</a></li>
+            <li><a href="#">Shorts & Dungarees</a></li>
+            <li><a href="#">Track Pants and Pyjamas</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header" style="color:orange">Footwear</li>
+            <li><a href="kid_footwear.html">Casual Shoes</a></li>
+            <li><a href="#">Flats</a></li>
+            <li><a href="#">Heels</a></li>
+            <li><a href="#">Sports Shoes</a></li>
+            <li><a href="#">Flip Flops</a></li>
+            <li><a href="#">Sandals</a></li>
+            <li class="dropdown-header" style="color:orange">Kids Accessories</li>
+            <li><a href="#">Bags & Bagpacks</a></li>
+            <li><a href="#">Watches</a></li>
+            <li><a href="kid_etnic.html">Jewwllery</a></li>
+            <li><a href="#">Sunglasses</a></li>
+            <li class="dropdown-header" style="color:orange"><a href="kid_toys.html">Toys</li></a>
+          </ul>
+        </li>
+
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home & Living<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header"><a href="home.html" style="color:brown;text-decoration: none">Home Decor</a></li>
+            <li><a href="art.html">Artificial Flowers and Plants</a></li>
+            <li><a href="#">Candles and Candle holders</a></li>
+            <li><a href="kitchen.html">Kitchen & Dining</a></li>
+            <li><a href="#">Decals and Stickers</a></li>
+            <li><a href="#">Fountains</a></li>
+            <li><a href="#">Key Holders</a></li>
+            <li><a href="decor.html">Showpieces</a></li>
+            <li><a href="hand.html">Wall Shelves</a></li>
+            <li><a href="#">Wall Art</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header" style="color:brown">Lamps And Lightning</li>
+            <li><a href="lamp.html">Floor Lamps</a></li>
+            <li><a href="#">Table Lamps</a></li>
+            <li><a href="#">Wall Lamps</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header" style="color:brown">Bed Linen & Furnishing</li>
+            <li><a href="bed.html">Bedsheets</a></li>
+            <li><a href="Furnishing.html">Blankets Quilts and Dohars</a></li>
+            <li><a href="#">Pillows & Pillow Covers</a></li>
+            <li><a href="#">Bed Covers</a></li>
+            <li class="dropdown-header" style="color:brown">Flooring</li>
+            <li><a href="#">Carpets</a></li>
+            <li><a href="#">Floor Mats</a></li>
+            <li><a href="#">Door Mats</a></li>
+            <li class="dropdown-header" style="color:brown">Cushions & Cushion Covers</li>
+          </ul>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"></span></a>
+          
+<div id="id01" class="modal">
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="avatar.jpg" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container text">
+      <label for="uname"><b>Username</b></label></br>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+        </br>
+      <label for="psw"><b>Password</b></label></br>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+    </br>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container last" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </br><center><a href="#" style="color: blue,font-size:20px;">Create a new account</center></a>
+    </div>
+  </form>
+</div>
+</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<p><b><u>TERMS AND CONDITIONS</b></u><br>
+Welcome to Fashion Hub. This page details a limited period Offer provided by our participating customers redeemable through our Fashion Hub Marketplace Platform. Please read these terms and conditions carefully before participating. You should understand that by participating in the Offer and using our Platform, you agree to be bound by these terms and conditions including Terms of Use and Privacy Policy of the Platform. Please understand that if you refuse to accept these terms and conditions, you will not be able to access the offers provided under our Platform.</p>
+
+<footer class="page-footer font-small unique-color-dark pt-0">
+<div style="background-color: #060526">
+    <div style="background-color: #6351ce;">
+        <div class="container">
+            <div class="row py-4 d-flex align-items-center">
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    <h6 class="mb-0 white-text">Get connected with us on social networks!</h6>
+                </div>
+                <div class="col-md-6 col-lg-7 text-center text-md-right">
+                    <!--Facebook-->
+                    <a class="fb-ic ml-0">
+                        <i class="fa fa-facebook white-text mr-lg-4 footeri"> </i>
+                    </a>
+                    <!--Twitter-->
+                    <a class="tw-ic">
+                        <i class="fa fa-twitter white-text mr-lg-4 footeri"> </i>
+                    </a>
+                    <!--Google +-->
+                    <a class="gplus-ic">
+                        <i class="fa fa-google-plus white-text mr-lg-4 footeri"> </i>
+                    </a>
+                    <!--Linkedin-->
+                    <a class="li-ic">
+                        <i class="fa fa-linkedin white-text mr-lg-4 footeri"> </i>
+                    </a>
+                    <!--Instagram-->
+                    <a class="ins-ic">
+                        <i class="fa fa-instagram white-text mr-lg-4 footeri"> </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5 mb-4 text-center text-md-left">
+        <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mb-4 foot">
+                <h6 class="text-uppercase font-weight-bold">
+                    <strong>Company Moto</strong>
+                </h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p class="para" style="font-size: 18px"><a href="#" style="text-decoration: none">Style is a way to say who you are without having to speak.So a best place to choose your Style.</p> </a>
+                            </div>
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 foot">
+                <h6 class="text-uppercase font-weight-bold">
+                    <strong>Products</strong>
+                </h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <a href="men.html"  style="text-decoration: none">Men</a>
+                </p>
+                <p>
+                    <a href="women.html" style="text-decoration: none">Women</a>
+                </p>
+                <p>
+                    <a href="kids.html" style="text-decoration: none">Kids</a>
+                </p>
+                <p>
+                    <a href="home.html" style="text-decoration: none">Home & Living</a>
+                </p>
+            </div>
+         
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 class="text-uppercase font-weight-bold">
+                    <strong>Useful links</strong>
+                </h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <a href="tc.html" style="text-decoration: none">T&C</a>
+                </p>
+                <p>
+                    <a href="tos.html" style="text-decoration: none">Terms of Use</a>
+                </p>
+                
+            </div>
+           
+            <div class="col-md-4 col-lg-3 col-xl-3">
+                <h6 class="text-uppercase font-weight-bold">
+                    <strong>Contact</strong>
+                </h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <a href="#" style="text-decoration: none;">
+                    <i class="fa fa-home mr-3" style="color:white;font-size: 18px;"></i>  Gujarat, India</a></br>
+                <a href="#" style="text-decoration: none;">
+                    <i class="fa fa-envelope mr-3" style="color:white;font-size: 18px;"></i> suvarnasrushti@gmail.com</a></br>
+                <a href="#" style="text-decoration: none;">
+                    <i class="fa fa-phone mr-3" style="color:white;font-size: 18px;"></i> + 7490850591</a></br>
+                <a href="#" style="text-decoration: none;">
+                    <i class="fa fa-phone mr-3" style="color:white;font-size: 18px;"></i> + 9512218600</a></br>
+            </div>
+        </div>
+    </div>
+</div>
+</footer>
+</body>
+<script src="script.js">
+</script>
+</html>
